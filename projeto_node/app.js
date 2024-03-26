@@ -1,12 +1,12 @@
-const express = require('express');
-const exphbs = require('express-handlebars');
-const app = express();
-const path = express('path'); // const path = require('node:path');
-const db = require('./db/connection');
+const express    = require('express');
+const exphbs     = require('express-handlebars');
+const app        = express();
+const path       = require('path');
+const db         = require('./db/connection');
 const bodyParser = require('body-parser');
-const Job = require('./models/Job');
-const Sequelize = require('sequelize');
-const Op = Sequelize.Op;
+const Job        = require('./models/Job');
+const Sequelize  = require('sequelize');
+const Op         = Sequelize.Op;
 
 const PORT = 3000;
 
@@ -17,13 +17,13 @@ app.listen(PORT, function () {
 // BODY PARSER
 app.use(bodyParser.urlencoded({ extended: false }));
 
-// HANDLE BAR
-app.set('views', path.join(__dirname, 'views')); // const filePath = path.join(__dirname, 'data', 'file.txt');
-app.engine('handlerbars', exphbs({ defaultLayout: 'main' })); // const filePath = path.join(__dirname, 'data', 'file.txt');
+// HANDLE BARS
+app.set('views', path.join(__dirname, 'views'));
+app.engine('handlebars', exphbs.engine({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // STATIC FOLDER
-app.use(express.static(path.join(__dirname, 'public'))); // const filePath = path.join(__dirname, 'data', 'file.txt');
+app.use(express.static(path.join(__dirname, 'public')));
 
 // DB CONECTION
 db
@@ -44,28 +44,28 @@ app.get('/', (req, res) => {
     if (!search) {
         Job.findAll({
             order: [
-                ['createedAt', 'DESC']
+                ['createdAt', 'DESC']
             ]
         })
             .then(jobs => {
                 res.render('index', {
-                    jobs_routes
+                    jobs
                 });
             }).catch(err => console.log(err));
     } else {
         Job.findAll({
             where: {title: {[Op.like]: search}},
             order: [
-                ['createedAt', 'DESC']
+                ['createdAt', 'DESC']
             ]
         })
             .then(jobs => {
                 res.render('index', {
-                    jobs_routes, search
+                    jobs, search
                 });
             }).catch(err => console.log(err));
     }
 });
 
 // JOBS ROUTES
-app.use('/jobs_routes', require('./routes/jobs_routes'));
+app.use('/jobs', require('./routes/jobs'));

@@ -10,11 +10,11 @@ router.get('/test', (req, res) => {
 // DETAIL OPPORTUNITY
 router.get('/view/:id', (req, res) => Job.findOne({
     where: { id: req.params.id }
-})).then(job => {
+}).then(job => {
     res.render('view', {
         job
     });
-}).catch(err => console.log(err));
+}).catch(err => console.log(err)));
 
 // FORM SEND ROUTE
 router.get('/add', (req, res) => {

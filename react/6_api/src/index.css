@@ -1,7 +1,3 @@
-body {
-  padding-bottom: 500px;
-}
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -69,11 +65,4 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-}
-
-.botao-azul {
- background-color: #008cba;
- color: #fff;
- padding: 15px 30px;
- border-radius: 5px;
 }

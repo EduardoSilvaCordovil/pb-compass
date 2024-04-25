@@ -8,6 +8,9 @@ import UseInfoForm from "./components/UseInfoForm";
 import Button from "./components/Button";
 import PaiFunction from "./components/PaiFunction";
 import RenderCodicional from "./components/RenderCodicional";
+import BotaoEstilizado from "./components/BotaoEstilizado";
+import BotaoAzul from "./components/BotaoAzul";
+import Exercises from "./components/Exercises";
 
 function App() {
   return (
@@ -34,6 +37,19 @@ function App() {
       <Form/>
       {/*Renderização condicional*/}
       <RenderCodicional user="EDUARDO"/>
+      {/*Expressão ternária*/}
+      <LoggedIn LoggedIn={false}/>
+      <LoggedIn LoggedIn={true}/>
+      {/*Render nulo*/}
+      <Warning waring="Temos um warning"/>
+      {/*Listas chaves*/}
+      <NumberList numbers={(1, 2, 3, 4, 5)}/>
+      {/*Estilos por atributo*/}
+      <BotaoEstilizado/>
+      {/*Estilos globais*/}
+      <BotaoAzul/>
+      {/*Exercícios*/}
+      <Exercises/>
     </>
   );
 }

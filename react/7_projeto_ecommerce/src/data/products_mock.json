@@ -8,7 +8,7 @@
   {
     "id": 2,
     "name": "Camera vintage",
-    "price": 85.5,
+    "price": 85.45,
     "image": "https://source.unsplash.com/featured/?camera"
   },
   {
@@ -20,7 +20,7 @@
   {
     "id": 4,
     "name": "Tenis de corrida",
-    "price": 120.0,
+    "price": 120.99,
     "image": "https://source.unsplash.com/featured/?sneakers"
   },
   {
@@ -49,14 +49,14 @@
   },
   {
     "id": 9,
-    "name": "Samsung s9",
+    "name": "Samsung S9",
     "price": 119.99,
     "image": "https://www.t-mobile.com/content/dam/t-mobile/en-p/cell-phones/samsung/samsung-galaxy-s9-plus/lilac-purple/Samsung-Galaxy-S9-Plus-Lilac-Purple-2-3x.jpg"
   },
   {
     "id": 10,
     "name": "Nokia 6",
-    "price": 599.09,
+    "price": 599.95,
     "image": "https://static.toiimg.com/photo/56420863/Nokia-6.jpg"
   },
   {

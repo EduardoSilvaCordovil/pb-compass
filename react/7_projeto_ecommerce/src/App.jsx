@@ -11,21 +11,36 @@ function App() {
 
   const handleAddCart = (product, quantity) => {
     setCartItems((prevItems) => {
-      
       const itemExists = prevItems.find((item) => item.id === product.id);
 
       if (itemExists) {
-        toast.info(`Quantidade do item${product.name} atualizada.`)
+        toast.info(`Quantidade do item ${product.name} atualizada.`);
         return prevItems.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + quantity }
             : item
         );
       } else {
-        toast.success(`${product.name} adicionado com sucesso!`)
+        toast.success(`${product.name} adicionado com sucesso!`);
         return [...prevItems, { ...product, quantity }];
       }
     });
+  };
+
+  const handleUpdateCart = (product, quantity) => {
+    toast.info(`Quantidade do item ${product.name} atualizada.`);
+    setCartItems((prevItems) => {
+      return prevItems.map((item) =>
+        item.id === product.id ? { ...item, quantity: +quantity } : item
+      );
+    });
+  };
+
+  const handleRemoveFromCart = (product) => {
+    toast.error(`${product.name} foi removido com sucesso!`);
+    setCartItems((prevItems) =>
+      prevItems.filter((item) => item.id !== product.id)
+    );
   };
 
   return (
@@ -44,18 +59,34 @@ function App() {
             ></Route>
             <Route
               path="/cart"
-              element={<Cart cartItems={cartItems} />}
+              element={
+                <Cart
+                  cartItems={cartItems}
+                  onUpdateCart={handleUpdateCart}
+                  onRemoveFromCart={handleRemoveFromCart}
+                  setCartItems={setCartItems}
+                  onCheckout={() => {
+                    if (cartItems.length > 0) {
+                      toast.success("Compra finalizada com sucesso!");
+                      setCartItems([]);
+                    } else {
+                      toast.error("Seu carrinho está vazio");
+                    }
+                  }}
+                />
+              }
             ></Route>
-            <Route path="/thank-you" element={<ThankYouPage />}></Route>
+            <Route path="/thank-you-page" element={<ThankYouPage />}></Route>
           </Routes>
         </div>
+
         <ToastContainer
-        closeOnClick
-        pauseOnHover
-        autoClose={3000}
-        pauseOnFocusLoss
-        position="top-center"
-        hideProgressBar={false}
+          closeOnClick
+          pauseOnHover
+          autoClose={3000}
+          pauseOnFocusLoss
+          position="top-center"
+          hideProgressBar={false}
         />
       </BrowserRouter>
     </>

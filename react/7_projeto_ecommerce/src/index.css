@@ -6,13 +6,13 @@ body {
 }
 
 nav {
-  color: #FFF;
+  color: #fff;
   padding: 10px;
   background-color: #333;
 }
 
 nav a {
-  color: #FFF;
+  color: #fff;
   margin-right: 10px;
   text-decoration: none;
 }
@@ -35,7 +35,7 @@ nav a {
   border-radius: 5px;
   margin-bottom: 10px;
   flex-direction: column;
-  background-color: #FFF;
+  background-color: #fff;
   justify-content: space-between;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -44,4 +44,38 @@ nav a {
   max-width: 200px;
   max-height: 200px;
   object-fit: contain;
+}
+
+.product h3,
+.cart-item h3 {
+  margin-top: 0;
+}
+
+.total button,
+.product button,
+.cart-item button,
+.thank-you-page button {
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #5cb75c;
+}
+
+.total button:hover,
+.product button:hover,
+.cart-item button:hover,
+.thank-you-page button:hover {
+  background-color: #4cae4c;
+}
+
+.total {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.total p {
+  font-size: 18px;
+  font-weight: bold;
 }

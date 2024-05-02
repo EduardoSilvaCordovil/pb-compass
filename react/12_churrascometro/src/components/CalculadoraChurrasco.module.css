@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  padding: 20px;
+  max-width: 500px;
+  margin: 20px auto;
+  align-items: center;
+  border-radius: 15px;
+  flex-direction: column;
+  background-color: #fdfdfd;
+}
+
+.inputGroup {
+  margin-bottom: 10px;
+}
+
+.inputLabel {
+  margin-bottom: 5px;
+  margin-right: 10px;
+}
+
+.inputField {
+  padding: 5px;
+  width: 150px;
+}
+
+.checkboxInput {
+  margin-right: 10px;
+}
+
+.calculateButton {
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #4caf50;
+}
+
+.calculateButton:hover {
+  background-color: #45a049;
+}
+
+.error {
+  margin-top: 5px;
+  color: #cb3535;
+  font-style: italic;
+}

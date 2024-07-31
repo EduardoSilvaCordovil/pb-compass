@@ -1,4 +1,4 @@
-import bgImage from "../assets/bg-1.jpeg"
+import bgImage from "../assets/bg-1.jpg"
 import CalculadoraChurrasco from "../components/CalculadoraChurrasco";
 
 const Calculadora = () => {

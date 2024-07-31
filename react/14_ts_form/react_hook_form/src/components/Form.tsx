@@ -3,8 +3,10 @@ import { FormSchema } from "../schemas/formSchema";
 
 const Form = () => {
   const { register, handleSubmit, errors } = useForms();
-
+  
   const onSubmit = (data: FormSchema) => {
+    console.log("BOTÃO APERTADO");
+    
     console.log(data);
   };
 
